@@ -95,7 +95,7 @@ class SmartDoorClassifierv1(nn.Module):
             nn.MaxPool2d(2),
             nn.Flatten(),
             nn.Linear(8 * 8 * 8, 2, bias=False),
-            # sl.LIFSqueeze(tau_mem=5e-3, batch_size=16, spike_fn=None),
+            sl.LIFSqueeze(tau_mem=5e-3, batch_size=16, spike_fn=None),
         )
     def forward(self, x):
         return self.seq(x)
